@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    
+}
+
+.container{
+    margin: 0 auto;
+    padding: 10px 30px;
+    max-width: 1150px;
+}
+h1{
+    font-size: 5rem;
+    color:rgb(254,115,140,.7)  ;
+}
+.todo_div{
+display: grid;
+place-items: center;
+justify-content: center;
+}
+#input{
+    width: 12rem;
+    border: 1px solid #3333;
+    font-size: 2rem;
+   
+    
+}
+input:focus{
+    outline:1px solid salmon ;
+    border:1px solid salmon  ;
+}
+input::placeholder{
+    text-align: center;
+    font-size: 0.8rem;
+    color: #333;
+    
+}
+.subinputbox{
+    
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#input2{
+    width: 4rem;
+}
+button{
+    width: 6rem;
+    height: 2.5rem;
+    background: #f3f3f3;
+    color: dodgerblue;
+    border: 1px solid #f3f3;
+}
+.todoForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tasks{
+    margin:30px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    
+    grid-gap: 20px;
+    
+}
+.tasks>*{
+    flex-basis: 20%;
+    min-width: 15rem;
+}
+section.subtasks{
+   
+    height: 180px;
+    padding: 10px 30px;
+    border: 1px solid #333;
+}
