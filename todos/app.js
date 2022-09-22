@@ -1,37 +1,63 @@
-const input=document.getElementById('input')
-let form=document.getElementById("form")
-let submit=document.getElementById("submit")
+const form=document.getElementById("form")
+const input=document.getElementById("input")
+const todosUl=document.getElementById("todos")
+const todos=JSON.parse(localStorage.getItem('todos'))
 
-function mainTask(){
-let allTasksBox=document.getElementById("tasks")
-let mainBox=document.createElement('section')
-let  subinputbox=document.createElement('div')
-let mainBoxTitle=document.createElement("h3")
-let input2=document.createElement('input')
-subinputbox.classList.add('subinputbox')
-mainBox.classList.add('subtasks')
-mainBoxTitle.innerText=input.value
-subinputbox.append(mainBoxTitle)
-subinputbox.append(input2)
-mainBox.append(subinputbox)
+if(todos){
+    todos.forEach(todo => {
+        console.log(todo.text);
+        addTodo(todo)
+    });
+}
 
-allTasksBox.append(mainBox)
+form.onsubmit=(e)=>{
+e.preventDefault();
+addTodo()
+}
 
-
-
+function addTodo(todo){
+    let todoText=input.value
     
-
-
+    if(todo){
+        todoText=todo.text
+    }
+    if(todoText){
+        const todoEl=document.createElement("li")
+        if(todo && todo.completed){
+            todoEl.classList.add('completed')
+        }
+        
+        
+        todoEl.innerText=todoText
+        
+        todoEl.onclick=()=>{
+            todoEl.classList.toggle('completed')
+            updateLs()
+        }
+        todoEl.oncontextmenu=(e)=>{
+           e.preventDefault()
+           todoEl.remove()
+           updateLs()
+        }
+        todosUl.appendChild(todoEl)
+        input.value=""
+        updateLs()
+    }
 }
-function mainTaskJson(task){
-let tasks=[]
-if(task){
-    
-}
 
-}
 
-submit.onclick=(e)=>{
-    e.preventDefault();
-    mainTask()
+
+function updateLs(){
+    todosEl=document.querySelectorAll('li')
+    const todos=[]
+    todosEl.forEach(todoEl => {
+        todos.push({
+            text:todoEl.innerText,
+            completed:todoEl.classList.contains('completed'),
+            nodes:[]
+        })
+    });
+
+    localStorage.setItem('todos',JSON.stringify(todos))
+
 }

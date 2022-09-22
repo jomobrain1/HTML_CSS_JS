@@ -5,51 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>todos</title>
+    <title>todo</title>
 </head>
 <body>
-   
-  <div class="container">
-
-    <div class="todo_div">
-        <h1>Todos</h1>
-    <form class="form" id="form">
-   <section class="todoForm">
-    <input type="text" placeholder="addtodo" id="input" autocomplete="off">
-    <button type="submit" id="submit">addto</button>
-   </section>
-   <div class="tasks" id="tasks">
-            <section class="subtasks" id="subtasks">
-              
-                <div class="subinputbox" id="subinputbox">
-                <h3>task1</h3>
-                <form  id="subForm">
-                    <input type="text" id="input2" >
-                </form>
-            </div>
-                <div class="ul">
-                    <li>task2</li>
-                <li>task3</li>
-                </div>
-                
-            </section>
-            
-        
-
     
-   </div>
+    <h1>Todos</h1>
+    <form id="form">
+
+   <input type="text" class=" input" id="input" placeholder="add todo">
+
+    <ul class="todos" id="todos" >
+      
+
+    </ul>
     </form>
-    
-    
-
-
-    </div>
-
-
-
-
-
-  </div>  
-<script src="./app.js"></script>
+<small>
+    Left click to toggle completed
+    <br>
+    Right click to delete todo
+</small>
+    <script src="./app.js"></script>
 </body>
 </html>
