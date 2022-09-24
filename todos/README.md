@@ -4,7 +4,7 @@ db:localstorage
 2.Click on task to mark complete <br>
 3.Right click to remove task <br>
 # Project url
-<p><a src="https://megatodos.netlify.app/">click here</a></p>
+<p><a href="https://megatodos.netlify.app/">click here</a></p>
 <img src="./images/todos.png" width="600" align="center">
 
 
